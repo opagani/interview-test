@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-xs-3">
+    <button class='btn btn-primary' ng-click="add()" style="margin-right:50px">Add</button>
+  </div>
+  <div class="col-xs-6">
+    Search: <input ng-model="searchText">
+  </div>
+</div>
+<br/>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Party</th>
+      <th>Comments</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="reservation in reservations | filter:searchBy | filter:dateRange | orderBy:categorySelection | filter:searchText">
+      <td>{{reservation.first_name}}</td>
+      <td>{{reservation.last_name}}</td>
+      <td>{{reservation.date | date:"EEE MM/dd"}}</td>
+      <td>{{reservation.time}}</td>
+      <td>{{reservation.party_size}}</td>
+      <td>{{reservation.comments}}</td>
+      <td><button class='btn btn-primary' ng-click="edit(reservation)">Edit</button></td>
+      <td><button class='btn btn-danger' ng-click="showConfirmation = !showConfirmation" ng-show="!showConfirmation">Delete</button>
+        <button class='btn btn-warning' ng-show="showConfirmation" ng-click="destroy(reservation)">Confirm delete</button></td>
+    </tr>
+  </tbody>
+</table>

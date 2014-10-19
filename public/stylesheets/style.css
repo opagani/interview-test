@@ -1,0 +1,11 @@
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
+
+#top-search {
+  display: inline-block;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}

@@ -1,0 +1,31 @@
+<h3>{{action}} reservation</h3>
+<form name="reservationForm" ng-submit="submit()">
+  <label>First Name:<br/>
+    <input type="text" name="first_name" ng-model="reservation.first_name" ng-required="true"/>
+  </label><br/>
+  <label>Last Name:<br/>
+    <input type="text" name="last_name" ng-model="reservation.last_name" ng-required="true"/>
+  </label><br/>
+  <label>Reservation Date:
+    <div class="row">
+      <div class="col-md-6" style="width: 202px">
+          <p class="input-group">
+            <input type="text" name="date" ng-model="reservation.date" ng-required="true" class="form-control" datepicker-popup="yyyy-MM-dd"  is-open="opened" min="minDate" max="maxDate" datepicker-options="dateOptions" close-text="Close" />
+            <span class="input-group-btn">
+              <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </p>
+      </div>
+    </div>
+  </label><br/>
+  <label>Reservation Time:<br/>
+    <select name="time" ng-model="reservation.time" ng-options="t for t in times"></select><br>
+  </label><br/>
+  <label>Party Size:<br/>
+    <input type="number" name="party_size" ng-model="reservation.party_size" ng-required="true"  min="1" max="20"/>
+  </label><br/>
+  <label>Additional Comments:<br/>
+    <input type="text" name="comments" maxlength="30" ng-model="reservation.comments"/>
+  </label><br/>
+  <input type="submit" value="Submit" class="btn btn-primary"/> <button class="btn" ng-click="cancel($event)"/>Cancel</button>
+</form>

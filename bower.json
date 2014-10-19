@@ -1,0 +1,29 @@
+{
+  "name": "interview-test",
+  "version": "0.0.1",
+  "authors": [
+    "Joseph McElroy <phoey1@gmail.com>"
+  ],
+  "description": "interview test",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "1.6.0",
+    "angular": "1.2.19",
+    "angular-mocks": "1.2.19",
+    "sinonjs": "1.9.1",
+    "bootstrap": "~3.2.0",
+    "angular-route": "1.2.19",
+    "angular-ui-bootstrap-bower": "~0.11.0"
+  },
+  "devDependencies": {
+    "angular-ui-utils": "~0.1.1"
+  }
+}
